@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 175888520}
   - component: {fileID: 175888519}
   - component: {fileID: 175888518}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10.439999}
-  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_LocalScale: {x: 40, y: 1, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 204051236}
   - component: {fileID: 204051235}
   - component: {fileID: 204051234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ Transform:
   m_GameObject: {fileID: 204051233}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 176.1, y: 24, z: -10.440002}
+  m_LocalPosition: {x: -19, y: 24, z: -10.440002}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -452,6 +452,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rotationSpeed: 500
+  groundCheckRadius: 0.2
+  groundCheckOffset: {x: 0, y: 0.1, z: 0.07}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!95 &389993816
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389993813}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d218fe47933bb405dbc05ad20438417a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 6b8ffb7b3924449848fd14e988c3eb3a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!143 &389993817
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389993813}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.7
+  m_Radius: 0.2
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.87, z: 0.08}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,11 +721,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d218fe47933bb405dbc05ad20438417a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -70
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d218fe47933bb405dbc05ad20438417a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d218fe47933bb405dbc05ad20438417a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -736,6 +788,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d218fe47933bb405dbc05ad20438417a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 389993815}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d218fe47933bb405dbc05ad20438417a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 389993816}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d218fe47933bb405dbc05ad20438417a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 389993817}
   m_SourcePrefab: {fileID: 100100000, guid: d218fe47933bb405dbc05ad20438417a, type: 3}
 --- !u!1 &2041721494
 GameObject:
